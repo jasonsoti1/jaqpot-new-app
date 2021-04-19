@@ -1,0 +1,21 @@
+.preds-table {
+    margin: 1em;
+    width: 60%;
+    border-spacing: 0.5em;
+}
+
+.headers {
+    text-align: center;
+}
+
+.mat-cell { 
+    text-align: center;
+}
+
+.spinner {
+    margin: 1em;
+}
+
+::ng-deep .mat-header-cell .mat-sort-header-container {
+    justify-content: center;
+}

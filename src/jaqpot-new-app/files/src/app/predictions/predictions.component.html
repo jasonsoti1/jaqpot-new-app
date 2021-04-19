@@ -1,0 +1,42 @@
+
+<div class="spinner">
+
+    <div *ngIf="calcPrediction">
+      <h4>Predicting...</h4>
+      <mat-spinner>
+      </mat-spinner>
+    </div>
+  
+</div>
+  
+
+<!-- <div *ngIf="goToPrediction; then predict(); else false">;</div> -->
+
+
+<div [hidden]="!predsOK">
+    <div style="clear:both;"></div>
+
+    <table mat-table [dataSource]="tablePreds" matSort class="mat-elevation-z8 preds-table">
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+            <th headers mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Endpoint Column -->
+        <ng-container matColumnDef="pred">
+            <div class= "headers">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ independent }} </th>
+            </div>
+            
+            <td mat-cell *matCellDef="let element"> {{element.pred}} </td>
+        </ng-container>
+
+        
+        <tr mat-header-row *matHeaderRowDef="predColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: predColumns;"></tr>
+    </table>
+
+</div>

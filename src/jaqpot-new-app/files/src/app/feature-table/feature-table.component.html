@@ -1,0 +1,38 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+<button mat-button (click)="add()" class="button-class">Add row</button>
+<button mat-button (click)="submit()" class="button-class">Submit</button>
+
+<div style="display: flex; flex-grow: grow" class="spacer">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 feature-data">
+    <!-- All columns -->
+     <ng-container *ngFor="let col of displayedFields;let i=index" [matColumnDef]="col">
+        <th mat-header-cell *matHeaderCellDef> {{displayedHead[i]}} </th>
+        <td mat-cell *matCellDef="let element">
+          <input [formControl]="element.get(col)">
+        </td>
+      </ng-container>
+      <!---column delete-->
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element;let i=index;">
+          <button mat-button (click)="delete(i)">Remove</button>
+      </td>
+  
+    </ng-container>
+  
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <app-dataset-csv [_model]="_model" (sendData)="receiveData($event)"></app-dataset-csv>
+</div>
+
+<div *ngIf="goToPrediction">
+  <app-predictions [sendFeatures]="sendFeatures" [ids]="ids"></app-predictions>
+
+</div>
+

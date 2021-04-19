@@ -1,0 +1,16 @@
+<h4 mat-dialog-title>
+    Select dataset's id 
+  </h4>
+  
+  <mat-form-field>
+      <mat-select placeholder="Dataset's id" [(value)]="selected" (selectionChange)="idChanged($event)">
+        <mat-option *ngFor="let id of possible_ids" [value]="id">
+          {{id}}
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
+  
+  
+  <mat-dialog-actions>
+    <button *ngIf="verify"  [mat-dialog-close]="selected" mat-button> If the id is {{selected}} continue</button>
+  </mat-dialog-actions>

@@ -1,0 +1,28 @@
+<mat-card class="upload-card">
+    
+    <mat-card-header>
+      <mat-card-title>Predict via CSV file</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <p>
+        Upload dataset with the required independent features and values.
+      </p>
+    </mat-card-content>
+    
+    <mat-card-actions>
+      
+      <button matTooltip="Download template dataset (csv)" mat-icon-button color="primary" (click)="downloadTemplate()">
+        <mat-icon>arrow_downward</mat-icon>
+      </button>
+
+      <button matTooltip="Upload dataset (should at least contain independent features)" mat-icon-button color="accent"
+      type="button" onclick="document.getElementById('fileToUpload').click()">
+      <mat-icon>arrow_upward</mat-icon>
+    </button>
+
+    <input #dataInput id="fileToUpload" type="file" style="display:none;" accept="image/*, .csv" multiple="multiple"
+        (change)="uploadDataset($event.target.files)">
+    </mat-card-actions>
+  
+</mat-card>

@@ -1,0 +1,18 @@
+{
+    "__jaqpotApi": "https://api.jaqpot.org/jaqpot/services",
+    "jaqpotApi": "https://api.jaqpot.org/jaqpot/services",
+    "___jaqpotApi": "https://api.jaqpot.org/jaqpot/services",
+    "__stsServer": "https://login.jaqpot.org/auth/realms/jaqpot",
+    "stsServer": "https://login.jaqpot.org/auth/realms/jaqpot",
+    "__redirect_url" : "http://localhost:4200/",
+    "redirect_url" : "http://localhost:4200/",
+    "client_id":"jaqpot_tests",
+    "response_type" : "code",
+    "scope": "openid email profile",
+    "silent_redirect_url" : "/assets/silent_renew.html",
+    "__comment": "docker run -p 80:80 --name daphapp -v=/Users/pantelispanka/Jaqpot/deepdaph/deepdaph/conf.json:/usr/share/nginx/html/assets/conf.json deepdaph",
+    "__baseurl": "http://localhost:4201/",
+    "baseurl":"https://app.jaqpot,org",
+    "logLevel":"debug",
+    "academic":true
+}

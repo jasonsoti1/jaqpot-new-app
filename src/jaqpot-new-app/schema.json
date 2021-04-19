@@ -1,0 +1,52 @@
+{
+    "&schema": "http://json-schema.org/schema",
+    "id": "jaqpotAppsSchematics",
+    "title": "jaqpot-new-app Options Schema",
+    "type": "object",
+    "description": "The jaqpot-new-app schematics is used to create web applications integrating with Jaqpot in a matter of minutes.",
+    "properties": {
+        "title": {
+            "type": "string",
+            "description": "The title of the Web app.",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "Web App's title:"
+        },
+        "tabTitle": {
+            "type": "string",
+            "description": "The title of the browser's tab.",
+            "$default": {
+                "$source": "argv",
+                "index": 1
+            },
+            "x-prompt": "Tab's title:"
+        },
+        "description": {
+            "type": "string",
+            "description": "The description of the Web app.",
+            "$default": {
+                "$source": "argv",
+                "index": 2
+            },
+            "x-prompt": "Web App's description:"
+        },
+        
+        "modelId": {
+            "type": "string",
+            "description": "The ID of the model that will be used.",
+            "$default": {
+                "$source": "argv",
+                "index": 3
+            },
+            "x-prompt": "Jaqpot model's ID:"
+        }
+        
+    },
+    "required":[
+        "title",
+        "modelId",
+        "description"
+    ]    
+}

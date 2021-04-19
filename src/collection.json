@@ -1,0 +1,10 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "jaqpot-new-app": {
+      "description": "The jaqpot-new-app schematics is used to create web applications integrating with Jaqpot in a matter of minutes.",
+      "factory": "./jaqpot-new-app/index#jaqpotNewApp",
+      "schema": "./jaqpot-new-app/schema.json"
+    }
+  }
+}
