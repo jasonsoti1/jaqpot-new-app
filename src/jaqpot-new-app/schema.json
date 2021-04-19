@@ -13,6 +13,7 @@
                 "index": 0
             },
             "x-prompt": "Web App's title:"
+        
         },
         "tabTitle": {
             "type": "string",
@@ -22,6 +23,7 @@
                 "index": 1
             },
             "x-prompt": "Tab's title:"
+       
         },
         "description": {
             "type": "string",
@@ -41,12 +43,29 @@
                 "index": 3
             },
             "x-prompt": "Jaqpot model's ID:"
-        }
+        },
         
+        "overwrite": {
+            "description": "User's approval to overwrite files.",
+            "type": "boolean",
+            "default": "NO",
+            "enum": [
+              false,
+              true
+            ],
+            "x-prompt": {
+              "message": "Running the schematic some files (app.component.ts, app.module.ts, app.component.html, app.component.scss, index.html) will be overwriten. Are you OK?",
+              "type": "list",
+              "items": [
+                { "value": false,  "label": "NO" },
+                { "value": true, "label": "YES" }              ]
+            }
+        }
     },
     "required":[
         "title",
         "modelId",
-        "description"
+        "description",
+        "overwrite"
     ]    
 }
